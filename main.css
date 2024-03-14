@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+/* ### VÍDEO DE FUNDO ### */
+
+#background_video {
+    position: fixed; /* Fixa o vídeo para cobrir toda a página */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Faz com que o vídeo cubra toda a área do elemento */
+    z-index: -1; /* Coloca o vídeo atrás de todo o conteúdo */
+}
+
+/* ### CABEÇALHO ### */
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+    justify-content: space-between;
+    backdrop-filter: blur(2px); /* Adiciona um efeito de embaçamento à imagem de fundo */
+    border-style:solid;
+    border-color: white;
+    border-width: 1px;
+    border-radius: 9px;
+    max-width: 1280px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ### TÍTULO DO CABEÇALHO ### */
+
+header .title {
+    font-size:larger;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+header .title img {
+    max-height: 25px;
+    margin-right: 7px;
+    transition: transform 0.3s; /* Transição suave para o efeito de hover */
+}
+
+header .title img:hover{
+    transform: scale(1.1); /* Aumenta a escala da imagem em 10% quando o mouse passa por cima */
+}
+
+.leme2 {
+    margin-left: 7px;
+}
+
+header .title a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items:flex-end;
+    font-family: Josefin Sans;
+    font-weight: 400;
+    transition: filter 0.3s; /* Transição suave para o efeito de hover */
+}
+
+header .title a:hover {
+    filter: hue-rotate(180deg); /* Muda a cor da imagem em 180 graus quando o mouse passa por cima */
+}
+
+/* ### MENU DO CABEÇALHO ### */
+
+header .menu li a {
+    font-size: small;
+    text-decoration: none;
+    color: white;
+    display: inline;
+    margin-right: 7px;
+}
+
+header .menu li {
+    display: inline;
+}
+
+header .menu li img {
+    max-height: 29px;
+    transition: transform 0.3s, filter 0.3s; /* Transição suave para o efeito de hover */
+} 
+
+header .menu li img:hover{
+    transform: scale(1.1); /* Aumenta a escala da imagem em 10% quando o mouse passa por cima */
+    filter: hue-rotate(180deg); /* Muda a cor da imagem em 180 graus quando o mouse passa por cima */
+}
+
+header .menu li img.sobre {
+    vertical-align: top;
+    max-height: 26px;
+}
+
+header .menu li img.vela {
+    vertical-align: top;
+    max-height: 24.5px;
+}
+
+header .menu li img.lancha {
+    vertical-align: bottom;
+}
+
+header .menu li img.jet {
+    max-height: 30px;
+    vertical-align: bottom;
+}
+
+header .menu li img.perguntas {
+    max-height: 27px;
+}
+
+header .menu li img.redes {
+    max-height: 25px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+#content_container {
+    position: relative; /* Define o contêiner pai como posição relativa */
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; /* Empilha as seções verticalmente */
+}
+
+/* ### BODY ### */
+
+/* Oculta a barra de rolagem vertical */
+body {
+    overflow-y: hidden;
+}
+
+/* Define as transições para as seções */
+section {
+    transition: opacity 0.5s ease-in-out; /* Transição suave de opacidade */
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin: 0 auto; /* Centraliza a seção dentro do contêiner pai */
+    transform: translateX(-50%); /* Centraliza horizontalmente a seção */
+}
+
+/* Oculta todas as seções, exceto a seção que é alvo (clicada) */
+section:not(:target) {
+    opacity: 0;
+    pointer-events: none; /* Impede a interação com as seções ocultas */
+}
+
+/* Quando uma seção é alvo (clicada), mostra-a com um efeito de fade-in */
+section:target {
+    opacity: 1;
+}
+
+/* Mostra a seção inicial */
+#sobre:target {
+    opacity: 1;
+}
+
+/* ### SOBRE ### */
+
+
+#sobre,
+#veleiros,
+#lanchas,
+#jet,
+#contato,
+#redes {
+    box-sizing: border-box;
+    max-width: 900px;
+    padding: 19px;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-end;
+    justify-content: center;
+    vertical-align: center;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 9px;
+    border-style: solid;
+    backdrop-filter: blur(2px); /* Adiciona um efeito de embaçamento à imagem de fundo */
+}
+
+#sobre img,
+#veleiros img,
+#lanchas img,
+#jet img,
+#contato img {
+    max-height: 200px;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 9px;
+    border-style: solid;
+}
+
+.conteudo_sobre {
+    font-family: Josefin Sans;
+    font-weight: 350;
+    margin-left: 17px;
+    margin-right: 60px;
+    margin-top: 35px;
+    color: white;
+}
+
+.conteudo_sobre h2 {
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size:larger;
+}
+
+/* ### CONTATO ### */
+
+#contato {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    text-align: center;
+    top: 50%;
+}
+
+#contato .container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+#contato h2 {
+    font-size:xx-large;
+    margin-top: 0;
+    color: white;
+    font-family: Josefin Sans;
+}
+
+.contact_methods h3 {
+    margin-top: 2px;
+    margin-bottom: 7px;
+    font-size: larger;
+}
+
+.contact_methods form {
+    display:block;
+    justify-content: space-between;
+}
+
+form input,
+form textarea,
+form button {
+    display:flex;
+    width: 320px;
+    margin-bottom: 8px;
+    padding: 6px;
+    border-style: solid;
+    border-radius: 9px;
+    border-color: white;
+    border-width: 1px;
+    background-color: transparent;
+    color: white;
+    transition: transform 0.3s, filter 0.3s; /* Transição suave para o efeito de hover */
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: white;
+    font-size: small;
+}
+
+form button:hover {
+    transform: scale(1.1); /* Aumenta a escala da imagem em 10% quando o mouse passa por cima */
+    filter: hue-rotate(180deg); /* Muda a cor da imagem em 180 graus quando o mouse passa por cima */
+    cursor: pointer;
+}
+
+form textarea {
+    resize: none;
+}
+
+/* ### REDES ### */
+
+#redes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+#redes .container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+#redes h2 {
+    font-size:xx-large;
+    margin-top: 0;
+    color: white;
+}
+
+.social_links h3 {
+    margin-top: 2px;
+    margin-bottom: 7px;
+    font-size: larger;
+}
+
+.social_links {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+}
+
+.social_links img {
+    height: 24px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 8px;
+}
+
+.social_links li {
+    display: block;
+    margin-right: 8px;
+    justify-content: space-between;
+}
+
+.social_links a {
+    display: inline;
+    text-decoration: none;
+    height: fit-content;
+    width:fit-content;
+}
